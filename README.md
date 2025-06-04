@@ -28,10 +28,27 @@ cargo build --release
 > [!NOTE]
 > `.knit` is our custom file extension, however for `.knit` files to work you *may* need to have the source in the root directory of your project.
 
-- `K` = operation/function
-- `P` = variable declaration
-- `YO` = increment/loop
-- `K2tog` = If/Else / Logic Branch
-- `Pattern repeat` = loop(s)
-- `Cast on` = Start/Init block
-- `Bind off` = End/Return
+### Syntax Glossary
+
+| 🧵 Knitting Term            | 💻 Programming Equivalent         | 💬 Notes                                                                     |
+| --------------------------- | --------------------------------- | ---------------------------------------------------------------------------- |
+| `K` (knit)                  | Operation / Function              | Core unit of work; executes a line or step                                   |
+| `P` (purl)                  | Variable declaration              | Stores yarn, needle info, row state                                          |
+| `YO` (yarn over)            | Increment / Loop initialization   | Adds a new stitch (increases count)                                          |
+| `K2tog` (knit 2 together)   | If/Else or Conditional Logic      | Combines stitches → test & react (compression or decision)                   |
+| `SSK` (slip, slip, knit)    | Comparison / Merge                | Rearranges or compares values                                                |
+| `Pattern repeat`            | Loops (for/while)                 | Repeat blocks of instructions/stitches                                       |
+| `* * repeat n times`        | `for` loop                        | Repeats a pattern block a specific number of times                           |
+| `Cast on`                   | Program start / Init block        | Beginning of execution; memory allocation                                    |
+| `Bind off`                  | Program end / Return / Cleanup    | Frees memory / closes output                                                 |
+| `Stitch marker`             | Label / Anchor / Checkpoint       | Used to mark positions in loops or branches                                  |
+| `Gauge`                     | Type checking / Size constraints  | Ensures consistent output (e.g., size, speed, type)                          |
+| `Row` / `Round`             | Code block / Function call        | A complete unit of execution; stack frame analog                             |
+| `Increase`                  | Push to list / Expand memory      | Adds a new element                                                           |
+| `Decrease`                  | Pop from list / Reduce memory     | Removes an element                                                           |
+| `Tension`                   | Runtime performance tuning        | Balancing tightness/efficiency                                               |
+| `Frogging`                  | Rollback / Undo / Debug           | Rip it out and try again 🐸                                                  |
+| `Stitch holder`             | Temporary variable / Cache        | Stores values for reuse or reassignment                                      |
+| `Cable`                     | Thread switching / Threaded logic | Rearranges stitch execution order (like parallelism or non-linear execution) |
+| `Chart` / `Written pattern` | Source code or DSL file           | Human-readable source                                                        |
+| `Swatch`                    | Test / Compile                    | Prototype run of a block before full program                                 |

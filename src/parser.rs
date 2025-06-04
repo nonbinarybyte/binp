@@ -1,5 +1,5 @@
 use crate::lexer::Token;
-use crate::parser::ProgramError::{ExpectedAfterIdentifier, ExpectedIdentifier, NotInBounds};
+use crate::parser::ProgramError::{ExpectedAfterIdentifier, ExpectedIdentifier, NotInBounds, UnexpectedToken};
 
 #[derive(Debug, Clone)]
 pub enum ASTNode {
@@ -91,10 +91,10 @@ pub fn parse(tokens: Vec<Token>) -> Vec<Result<ASTNode, ProgramError>> {
                         Err(NotInBounds("Repeat count has to be a positive number below 2^32".to_string()))
                     }
                 } else {
-                    panic!("Expected number after repeat");
+                    Err(ExpectedIdentifier("Expected number after repeat".to_string()))
                 }
             }
-            _ => panic!("Unexpected token: {:?}", tokens[*i]),
+            _ => Err(UnexpectedToken("Token not expected".to_string())),
         }
     }
 

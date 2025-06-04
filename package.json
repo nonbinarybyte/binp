@@ -1,0 +1,27 @@
+{
+  "name": "knit-syntax",
+  "displayName": "Knit Syntax",
+  "description": "Syntax highlighting for the .knit programming language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "knit",
+        "aliases": ["Knit", "knit"],
+        "extensions": [".knit"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "knit",
+        "scopeName": "source.knit",
+        "path": "./syntaxes/knit.tmLanguage.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Knit",
+  "scopeName": "source.knit",
+  "patterns": [
+    {
+      "match": "\\b(cast_on|bind_off|K|P|YO|repeat)\\b",
+      "name": "keyword.control.knit"
+    },
+    {
+      "match": "\\b\\d+\\b",
+      "name": "constant.numeric.knit"
+    },
+    {
+      "match": "\"[^\"]*\"",
+      "name": "string.quoted.double.knit"
+    },
+    {
+      "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b",
+      "name": "variable.knit"
+    }
+  ],
+  "repository": {},
+  "fileTypes": ["knit"],
+  "uuid": "00000000-0000-0000-0000-000000000000"
+}

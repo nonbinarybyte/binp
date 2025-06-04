@@ -3,14 +3,14 @@ use crate::lexer::Token;
 #[derive(Debug, Clone)]
 pub enum ASTNode {
     /// Start/init block
-    CastOn(u32),
+    CastOn,
 
     /// Return/end
     BindOff,
-    
+
     ///
     Knit(String),
-    
+
     /// Variable declaration
     Purl(String, String),
 
@@ -42,13 +42,7 @@ pub fn parse(tokens: Vec<Token>) -> Vec<ASTNode> {
     fn parse_stmt(tokens: &[Token], i: &mut usize) -> ASTNode {
         match &tokens[*i] {
             Token::CastOn => {
-                *i += 1;
-                if let Token::Number(n) = &tokens[*i] {
-                    *i += 1;
-                    ASTNode::CastOn(*n)
-                } else {
-                    panic!("Expected number after cast_on");
-                }
+               ASTNode::CastOn
             }
             Token::BindOff => {
                 *i += 1;
@@ -94,7 +88,13 @@ pub fn parse(tokens: Vec<Token>) -> Vec<ASTNode> {
                     }
                     *i += 1;
                     let body = parse_block(tokens, i);
-                    ASTNode::Repeat(*n, body)
+
+                    if let Ok(x) = u32::try_from(*n) {
+                        ASTNode::Repeat(x, body)
+                    }
+                    else{
+                        panic!("Repeat count has to be a positive number below 2^32")
+                    }
                 } else {
                     panic!("Expected number after repeat");
                 }

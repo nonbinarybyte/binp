@@ -1,0 +1,7 @@
+cast_on 3
+P color = "red"
+repeat 2 {
+  K row
+  YO
+}
+bind_off

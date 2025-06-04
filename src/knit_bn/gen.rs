@@ -15,7 +15,7 @@ impl Generator {
     pub fn generate(nodes: &[ASTNode]){
         for i in nodes{
             match i {
-                ASTNode::CastOn(x) => {}
+                ASTNode::CastOn => {}
                 ASTNode::BindOff => {}
                 ASTNode::Knit(_) => {}
                 ASTNode::Purl(_, _) => {}

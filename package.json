@@ -1,5 +1,5 @@
 {
-  "name": "knit-syntax",
+  "name": "knitlang",
   "displayName": "Knit Syntax",
   "description": "Syntax highlighting for the .knit programming language",
   "version": "0.0.1",

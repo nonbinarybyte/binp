@@ -2,12 +2,23 @@ use crate::lexer::Token;
 
 #[derive(Debug, Clone)]
 pub enum ASTNode {
-    CastOn(i64),
+    /// Start/init block
+    CastOn(u32),
+
+    /// Return/end
     BindOff,
+    
+    ///
     Knit(String),
+    
+    /// Variable declaration
     Purl(String, String),
+
+    /// Increment/ loop init
     YarnOver,
-    Repeat(i64, Vec<ASTNode>),
+
+    /// Loop n times
+    Repeat(u32, Vec<ASTNode>),
 }
 
 pub fn parse(tokens: Vec<Token>) -> Vec<ASTNode> {

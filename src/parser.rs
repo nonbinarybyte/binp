@@ -1,20 +1,40 @@
 use crate::lexer::Token;
+use crate::parser::ProgramError::{ExpectedAfterIdentifier, ExpectedIdentifier, NotInBounds, UnexpectedToken};
 
 #[derive(Debug, Clone)]
 pub enum ASTNode {
-    CastOn(i64),
+    /// Start/init block
+    CastOn,
+
+    /// Return/end
     BindOff,
+
+    ///
     Knit(String),
+
+    /// Variable declaration
     Purl(String, String),
+
+    /// Increment/ loop init
     YarnOver,
-    Repeat(i64, Vec<ASTNode>),
+
+    /// Loop n times
+    Repeat(u32, Vec<ASTNode>),
 }
 
-pub fn parse(tokens: Vec<Token>) -> Vec<ASTNode> {
+#[derive(Debug, Clone)]
+pub enum ProgramError{
+    ExpectedIdentifier(String),
+    ExpectedAfterIdentifier(String),
+    NotInBounds(String),
+    UnexpectedToken(String),
+}
+
+pub fn parse(tokens: Vec<Token>) -> Vec<Result<ASTNode, ProgramError>> {
     let mut ast = Vec::new();
     let mut i = 0;
 
-    fn parse_block(tokens: &[Token], i: &mut usize) -> Vec<ASTNode> {
+    fn parse_block(tokens: &[Token], i: &mut usize) -> Vec<Result<ASTNode, ProgramError>> {
         let mut block = Vec::new();
         while *i < tokens.len() {
             match &tokens[*i] {
@@ -28,67 +48,53 @@ pub fn parse(tokens: Vec<Token>) -> Vec<ASTNode> {
         block
     }
 
-    fn parse_stmt(tokens: &[Token], i: &mut usize) -> ASTNode {
+    fn parse_stmt(tokens: &[Token], i: &mut usize) -> Result<ASTNode, ProgramError> {
         match &tokens[*i] {
             Token::CastOn => {
-                *i += 1;
-                if let Token::Number(n) = &tokens[*i] {
-                    *i += 1;
-                    ASTNode::CastOn(*n)
-                } else {
-                    panic!("Expected number after cast_on");
-                }
+                Ok(ASTNode::CastOn)
             }
             Token::BindOff => {
                 *i += 1;
-                ASTNode::BindOff
+                Ok(ASTNode::BindOff)
             }
             Token::Knit => {
                 *i += 1;
                 if let Token::Identifier(name) = &tokens[*i] {
                     *i += 1;
-                    ASTNode::Knit(name.clone())
+                    Ok(ASTNode::Knit(name.clone()))
                 } else {
-                    panic!("Expected identifier after K");
+                    Err(ExpectedIdentifier("Expected identifier after \"knit\"".to_string()))
                 }
             }
             Token::Purl => {
-                *i += 1;
-                if let Token::Identifier(name) = &tokens[*i] {
-                    *i += 1;
-                    if tokens[*i] != Token::Equals {
-                        panic!("Expected = after identifier");
-                    }
-                    *i += 1;
-                    if let Token::StringLiteral(val) = &tokens[*i] {
-                        *i += 1;
-                        ASTNode::Purl(name.clone(), val.clone())
-                    } else {
-                        panic!("Expected string after =");
-                    }
-                } else {
-                    panic!("Expected identifier after P");
-                }
+                purl_parser(tokens, i)
             }
             Token::YarnOver => {
                 *i += 1;
-                ASTNode::YarnOver
+                Ok(ASTNode::YarnOver)
             }
             Token::Repeat => {
                 *i += 1;
                 if let Token::Number(n) = &tokens[*i] {
                     *i += 1;
                     if tokens[*i] != Token::LBrace {
-                        panic!("Expected '{{' after repeat");
+                        return Err(ExpectedIdentifier("Expected {{ after repeat".to_string()))
                     }
                     *i += 1;
                     let body = parse_block(tokens, i);
-                    ASTNode::Repeat(*n, body)
+
+                    if let Ok(x) = u32::try_from(*n) {
+                        let tmp_body: Result<Vec<_>, _> = body.into_iter().collect();
+                        Ok(ASTNode::Repeat(x, tmp_body?))
+                    }
+                    else{
+                        Err(NotInBounds("Repeat count has to be a positive number below 2^32".to_string()))
+                    }
                 } else {
-                    panic!("Expected number after repeat");
+                    Err(ExpectedIdentifier("Expected number after repeat".to_string()))
                 }
             }
-            _ => panic!("Unexpected token: {:?}", tokens[*i]),
+            _ => Err(UnexpectedToken("Token not expected".to_string())),
         }
     }
 
@@ -97,4 +103,23 @@ pub fn parse(tokens: Vec<Token>) -> Vec<ASTNode> {
     }
 
     ast
+}
+
+fn purl_parser(tokens: &[Token], i: &mut usize) -> Result<ASTNode, ProgramError> {
+    *i += 1;
+    if let Token::Identifier(name) = &tokens[*i] {
+        *i += 1;
+        if tokens[*i] != Token::Equals {
+            return Err(ExpectedIdentifier("Expected = after identifier".to_string()));
+        }
+        *i += 1;
+        if let Token::StringLiteral(val) = &tokens[*i] {
+            *i += 1;
+            Ok(ASTNode::Purl(name.clone(), val.clone()))
+        } else {
+            Err(ExpectedAfterIdentifier("Expected string after identifier".to_string()))
+        }
+    } else {
+        Err(ExpectedIdentifier("Expected identifier after \"purl".to_string()))
+    }
 }

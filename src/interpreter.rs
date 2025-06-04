@@ -3,7 +3,7 @@ use crate::parser::ASTNode;
 pub fn run(ast: Vec<ASTNode>) {
     for node in ast {
         match node {
-            ASTNode::CastOn(n) => println!("🧵 Casting on {} stitches", n),
+            ASTNode::CastOn => println!("🧵 Casting on"),
             ASTNode::BindOff => println!("🧶 Binding off. Done!"),
             ASTNode::Knit(name) => println!("🪡 Knitting {}", name),
             ASTNode::Purl(var, val) => println!("📌 Variable {} set to \"{}\"", var, val),

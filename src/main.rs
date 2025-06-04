@@ -2,8 +2,10 @@ mod lexer;
 mod parser;
 mod interpreter;
 mod knit_bn;
+mod test;
 
 use clap::{Parser as ClapParser};
+use crate::parser::ASTNode;
 
 #[derive(ClapParser)]
 #[command(name = "knitlang")]
@@ -20,6 +22,9 @@ fn main() {
         .unwrap_or_else(|_| panic!("Could not read file: {}", &cli.file));
 
     let tokens = lexer::tokenize(&source);
-    let ast = parser::parse(tokens);
+    let ast: Vec<ASTNode> = parser::parse(tokens)
+        .iter()
+        .map(|x| x.clone().unwrap())
+        .collect();
     interpreter::run(ast);
 }

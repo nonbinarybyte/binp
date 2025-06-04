@@ -1,6 +1,7 @@
 mod lexer;
 mod parser;
 mod interpreter;
+mod knit_bn;
 
 use clap::{Parser as ClapParser};
 

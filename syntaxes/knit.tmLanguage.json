@@ -3,7 +3,7 @@
   "scopeName": "source.knit",
   "patterns": [
     {
-      "match": "\\b(cast_on|bind_off|K|P|YO|repeat)\\b",
+      "match": "\\b(cast_on|bind_off|K|P|YO|K2tog|SSK|repeat)\\b",
       "name": "keyword.control.knit"
     },
     {
@@ -17,9 +17,12 @@
     {
       "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b",
       "name": "variable.knit"
+    },
+    {
+      "match": "\\*.*?\\*",
+      "name": "comment.block.knit"
     }
   ],
-  "repository": {},
   "fileTypes": ["knit"],
-  "uuid": "00000000-0000-0000-0000-000000000000"
+  "uuid": "11111111-1111-1111-1111-111111111111"
 }

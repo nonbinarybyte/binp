@@ -1,0 +1,24 @@
+name: Auto Detect Duplicate Issues
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  check-duplicate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Duplicate Issue Check
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: 'check-duplicate'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title-strict: false
+          check-body: true
+          close-duplicate: true
+          add-labels: 'duplicate 🔁'
+          comment-body: |
+            👋 Thanks for opening this issue!
+
+            It looks like this has already been reported. I'm closing this as a duplicate.  
+            Please refer to the original issue for updates. 🙏

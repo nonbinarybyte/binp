@@ -1,0 +1,32 @@
+{
+  "projectName": "knitlang",
+  "projectOwner": "nonbinarybyte",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": ["README.md"],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "nonbinarybyte",
+      "name": "Kenny Thomas-Moore",
+      "avatar_url": "https://avatars.githubusercontent.com/u/184435682?v=4",
+      "profile": "https://github.com/nonbinarybyte",
+      "contributions": ["code", "doc", "translation", "ally", "maintenance"]
+    },
+    {
+      "login": "johndavedosn",
+      "name": "Evil",
+      "avatar_url": "https://avatars.githubusercontent.com/u/112868391?v=4",
+      "profile": "https://github.com/johndavedosn",
+      "contributions": ["code", "maintenance"]
+    },
+    {
+      "login": "mnem42",
+      "name": "mnem",
+      "avatar_url": "https://avatars.githubusercontent.com/u/177770058?v=4",
+      "profile": "https://github.com/mnem42",
+      "contributions": ["code", "maintenance"]
+    },
+  ]
+}

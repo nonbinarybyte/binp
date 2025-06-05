@@ -1,6 +1,6 @@
 # knitlang
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 *the language for knitters/crocheters by a crocheter/knitter.*
@@ -29,6 +29,7 @@ a brilliant person in discord.gg/program came up with an idea (mostly as a joke)
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Mnem42"><img src="https://avatars.githubusercontent.com/u/177770058?v=4?s=100" width="100px;" alt="Mnem42"/><br /><sub><b>Mnem42</b></sub></a><br /><a href="https://github.com/nonbinarybyte/knitlang/commits?author=Mnem42" title="Code">💻</a> <a href="#maintenance-Mnem42" title="Maintenance">🚧</a> <a href="#ideas-Mnem42" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://www.nonbinarybyte.com/"><img src="https://avatars.githubusercontent.com/u/184435682?v=4?s=100" width="100px;" alt="Kenny &#124; 肯尼"/><br /><sub><b>Kenny &#124; 肯尼</b></sub></a><br /><a href="https://github.com/nonbinarybyte/knitlang/commits?author=nonbinarybyte" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/johndavedosn"><img src="https://avatars.githubusercontent.com/u/112868391?v=4?s=100" width="100px;" alt="Ali moumen"/><br /><sub><b>Ali moumen</b></sub></a><br /><a href="https://github.com/nonbinarybyte/knitlang/commits?author=johndavedosn" title="Code">💻</a> <a href="#maintenance-johndavedosn" title="Maintenance">🚧</a></td>
     </tr>
   </tbody>
 </table>

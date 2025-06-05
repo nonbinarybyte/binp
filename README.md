@@ -1,7 +1,4 @@
 # knitlang
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 *the language for knitters/crocheters by a crocheter/knitter.*
 
@@ -18,24 +15,6 @@ knitlang was made in June 2025, by me, [kenny](https://github.com/nonbinarybyte)
 **SO Then...!**
 
 a brilliant person in discord.gg/program came up with an idea (mostly as a joke) that i should make something based off of knitting. So i did. (*mostly* for shits and giggles)
-
-## Contributors
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## How do I use knitlang?
 

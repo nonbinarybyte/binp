@@ -16,6 +16,17 @@ knitlang was made in June 2025, by me, [kenny](https://github.com/nonbinarybyte)
 
 a brilliant person in discord.gg/program came up with an idea (mostly as a joke) that i should make something based off of knitting. So i did. (*mostly* for shits and giggles)
 
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## How do I use knitlang?
 
 simply build from source using the following commands...

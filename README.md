@@ -18,13 +18,8 @@ a brilliant person in discord.gg/program came up with an idea (mostly as a joke)
 
 ## Contributors
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section --> 
+<table> <tr> <td align="center"><a href="https://github.com/nonbinarybyte"><img src="https://avatars.githubusercontent.com/u/184435682?v=4" width="100px;" alt="Kenny Thomas-Moore"/><br /><sub><b>Kenny Thomas-Moore</b></sub></a><br /><a href="#code-nonbinarybyte" title="Code">💻</a> <a href="#doc-nonbinarybyte" title="Docs">📖</a> <a href="#translation-nonbinarybyte" title="Translation">🌍</a> <a href="#ally-nonbinarybyte" title="Allyship">🏳️‍🌈</a> <a href="#maintenance-nonbinarybyte" title="Maintenance">🚧</a></td> <td align="center"><a href="https://github.com/johndavedosn"><img src="https://avatars.githubusercontent.com/u/112868391?v=4" width="100px;" alt="Evil"/><br /><sub><b>Evil</b></sub></a><br /><a href="#code-johndavedosn" title="Code">💻</a> <a href="#maintenance-johndavedosn" title="Maintenance">🚧</a></td> <td align="center"><a href="https://github.com/mnem42"><img src="https://avatars.githubusercontent.com/u/177770058?v=4" width="100px;" alt="mnem"/><br /><sub><b>mnem</b></sub></a><br /><a href="#code-mnem42" title="Code">💻</a> <a href="#maintenance-mnem42" title="Maintenance">🚧</a></td> </tr> </table>
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## How do I use knitlang?

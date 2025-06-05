@@ -24,13 +24,6 @@ a brilliant person in discord.gg/program came up with an idea (mostly as a joke)
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Mnem42"><img src="https://avatars.githubusercontent.com/u/177770058?v=4?s=100" width="100px;" alt="Mnem42"/><br /><sub><b>Mnem42</b></sub></a><br /><a href="https://github.com/nonbinarybyte/knitlang/commits?author=Mnem42" title="Code">💻</a> <a href="#maintenance-Mnem42" title="Maintenance">🚧</a> <a href="#ideas-Mnem42" title="Ideas, Planning, & Feedback">🤔</a></td>
-    </tr>
-  </tbody>
-</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
